@@ -1,16 +1,18 @@
+
 #include"s3c2440_soc.h"
 #include"uart.h"
 
 int main(void)
 {
 	unsigned char c;
-	uart0_init();
+
 	
-	puts("hello,world!\n");
+	uart0_init();
+	puts("hello,world!\n\r");
 
 	while(1)
 	{
-		c =getchar();
+		c = getchar();
 		putchar(c);
 		
 		

@@ -1,19 +1,17 @@
 .text
 .global _start
-
 _start:
-
 	//关闭看门狗
 	ldr r0,=0x53000000
 	ldr r1,=0
 	str r1,[r0]
 
-	//LOCKTIME (0x4C000000 )=0xFFFFFFFF 修改PLL时，锁定时间
+	//LOCKTIME (0x4C000000 )=0xFFFFFFFF 修改PLL时，锁定时间 fclk:hclk:pclk=400M:100M:50M	
 	ldr r0,=0x4C000000
 	ldr r1,=0xFFFFFFFF
 	str r1,[r0]
 
-	//CLKDIVN (0x4C000014 )=0x5 fclk:hclk:pclk=1:4:8
+	//CLKDIVN (0x4C000014 )=0x5 Tfclk:Thclk:Tpclk=1:4:8 
 	ldr r0,=0x4C000014
 	ldr r1,=0x5
 	str r1,[r0]

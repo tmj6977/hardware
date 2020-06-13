@@ -24,7 +24,6 @@ void uart0_init()
 	
 }
 
-
 int putchar(int c)
 {
  	/*UTRSTAT0*/
@@ -36,7 +35,7 @@ int putchar(int c)
 }
 
 
-int getchar(void )
+int getchar(void)
 {
 	/*URXH0 */
 	while(!(UTRSTAT0 & (1<<0))); 
